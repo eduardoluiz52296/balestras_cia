@@ -1,0 +1,15 @@
+.hero-section {
+    background: linear-gradient(135deg, #1a1a1a 0%, #3d2b1f 100%);
+}
+
+.produto-card img {
+    object-fit: cover;
+}
+
+.navbar-brand i {
+    color: #c9a227;
+}
+
+.card-title {
+    min-height: 2.5rem;
+}

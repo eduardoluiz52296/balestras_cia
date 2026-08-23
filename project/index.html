@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Balestras & Cia — Armamento Branco Esportivo</title>
+
+<!-- Bootstrap 5 -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+<link href="frontend/css/style.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- ===================== NAVBAR (componente Bootstrap 1) ===================== -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <div class="container">
+        <a class="navbar-brand fw-bold" href="#">
+            <i class="bi bi-bow-arrow"></i> Balestras &amp; Cia
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navMenu">
+            <ul class="nav nav-pills ms-auto" id="mainTabs" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="tab-loja" data-bs-toggle="tab" data-bs-target="#painel-loja" type="button" role="tab">
+                        <i class="bi bi-shop"></i> Loja
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="tab-dashboard" data-bs-toggle="tab" data-bs-target="#painel-dashboard" type="button" role="tab">
+                        <i class="bi bi-bar-chart-line"></i> Dashboard
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Hero -->
+<header class="hero-section text-white text-center py-5">
+    <div class="container">
+        <h1 class="display-6 fw-bold">Precisão em cada disparo</h1>
+        <p class="lead mb-0">Balestras, arcos e armamento branco para colecionadores e praticantes de tiro esportivo.</p>
+    </div>
+</header>
+
+<main class="container my-5">
+    <div class="tab-content">
+
+        <!-- ===================== PAINEL LOJA ===================== -->
+        <div class="tab-pane fade show active" id="painel-loja" role="tabpanel">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h2 class="h4 mb-0"><i class="bi bi-grid-3x3-gap"></i> Catálogo</h2>
+            </div>
+
+            <!-- Spinner de carregamento inicial -->
+            <div id="produtos-grid" class="row g-4">
+                <div class="col-12 text-center py-5">
+                    <div class="spinner-border text-dark" role="status">
+                        <span class="visually-hidden">Carregando...</span>
+                    </div>
+                    <p class="text-muted mt-2">Carregando catálogo...</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===================== PAINEL DASHBOARD ===================== -->
+        <div class="tab-pane fade" id="painel-dashboard" role="tabpanel">
+            <h2 class="h4 mb-4"><i class="bi bi-speedometer2"></i> Dashboard Financeiro</h2>
+
+            <div id="dashboard-alert"></div>
+
+            <div id="dashboard-cards" class="row g-3 mb-4"></div>
+
+            <div id="dashboard-tabela-wrap"></div>
+        </div>
+
+    </div>
+</main>
+
+<footer class="bg-dark text-white-50 text-center py-4 small">
+    Balestras &amp; Cia &middot; Projeto acadêmico &middot; MariaDB + PHP + Bootstrap + TypeScript
+</footer>
+
+<!-- ===================== MODAL (componente Bootstrap 2) ===================== -->
+<div class="modal fade" id="produtoModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalProdutoNome">Produto</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <span class="badge text-bg-secondary mb-2" id="modalProdutoCategoria"></span>
+                <p id="modalProdutoDescricao" class="mb-3"></p>
+                <p class="mb-1"><strong>Preço:</strong> <span id="modalProdutoPreco"></span></p>
+                <p class="mb-0 text-muted"><span id="modalProdutoEstoque"></span></p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                <button type="button" class="btn btn-dark"><i class="bi bi-cart-plus"></i> Adicionar ao carrinho</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Tabs (mainTabs) e Cards de produto/métrica também são componentes Bootstrap (3 e 4) -->
+
+<!-- Bootstrap JS bundle (inclui Popper) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+
+<!-- JS compilado a partir de ts/app.ts -->
+<script src="frontend/js/app.js"></script>
+</body>
+</html>
